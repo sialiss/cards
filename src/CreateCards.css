@@ -1,0 +1,27 @@
+.CreateCards {
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 3;
+}
+
+.cardTitle {
+    grid-row: 1/2;
+}
+
+.cardDescription {
+    grid-row: 2/3;
+}
+
+.buttons {
+    grid-row: 3/4;
+}
+
+/* .confirm {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.delete {
+    grid-column: 2/3;
+    grid-row: 3/4;
+} */
