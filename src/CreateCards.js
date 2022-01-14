@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import './CreateCards.css'
 
+let cardId = 1
 function CreateCards(props) {
     const [cardTitle, setCardTitle] = useState("")
     const [cardDescription, setCardDescription] = useState("")
+    
     return (
       <div className="CreateCards">
         <input className='cardTitle' value={cardTitle} onChange={e => setCardTitle(e.target.value)}/>
@@ -11,8 +13,9 @@ function CreateCards(props) {
         
         <div className='buttons'>
                 <button className="confirm" onClick={() => {
-                    const card = { title: cardTitle, description: cardDescription }
+                    const card = { id: cardId, title: cardTitle, description: cardDescription }
                     props.addCard(card)
+                    cardId += 1
                 }}>
             ✓
           </button>
