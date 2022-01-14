@@ -1,11 +1,11 @@
-import Card from './Card';
-import './ListOfCards.css'
+import Card from './Card.js';
+import './ListOfCards.css';
 
-function ListOfCards({ cards, deleteCard }) {
+function ListOfCards({ cards, deleteCard, editCard }) {
     
     	return (
       		<div className="ListOfCards">
-            	{cards.map(card => <Card key = { card.id } data = {card} deleteCard = {deleteCard}></Card>) }
+            	{cards.map(card => <Card key = { card.id } data = {card} deleteCard = {deleteCard} editCard = {editCard}></Card>) }
       		</div>
     );
 }

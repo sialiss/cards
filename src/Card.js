@@ -1,8 +1,11 @@
-import { render } from '@testing-library/react';
 import './Card.css'
 
-function Card({ data, deleteCard }) {
-    
+function Card({ data, deleteCard, editCard }) {
+    require('./Card.css')
+    function editData() {
+
+    }
+
     return (
         <div className="Card">
             <p className='text'>id: { data.id }</p>
@@ -10,7 +13,8 @@ function Card({ data, deleteCard }) {
             <p className='text'>{data.description}</p>
             <div className='buttons'>
                 <button className="change" onClick={() => {
-                    
+                    editData()
+                    editCard(data)
                 }}>
             ✎
           </button>

@@ -8,24 +8,14 @@
     box-shadow: 0px 0px 0px 1px rgb(146, 144, 144);
 }
 
-.cardTitle {
+.CreateCards .cardTitle {
     grid-row: 1/2;
 }
 
-.cardDescription {
+.CreateCards .cardDescription {
     grid-row: 2/3;
 }
 
-.buttons {
+.CreateCards .buttons {
     grid-row: 3/4;
 }
-
-/* .confirm {
-    grid-column: 1/2;
-    grid-row: 3/4;
-}
-
-.delete {
-    grid-column: 2/3;
-    grid-row: 3/4;
-} */
