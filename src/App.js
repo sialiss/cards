@@ -3,6 +3,9 @@ import './App.css';
 import CreateCards from './CreateCards.js';
 import ListOfCards from './ListOfCards.js';
 
+// обновление в gh - npm run deploy
+
+
 function App() {
   	const [cards, setCards] = useState([])
   

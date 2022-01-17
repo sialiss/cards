@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import './CreateCards.css'
 
-
-
 let cardId = 1
 function CreateCards(props) {
 	const [cardTitle, setCardTitle] = useState("")

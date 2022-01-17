@@ -4,7 +4,7 @@
     box-shadow: 0px 0px 0px 1px rgb(146, 144, 144);
 }
 
-.wrapper {
+.CreateCards .wrapper {
     margin: 0 auto;
     display: grid;
     grid-template-columns: auto 1fr;
@@ -13,10 +13,10 @@
     gap: 10px;
 }
 
-.labels {
+.CreateCards .labels {
     text-align: end;
 }
 
-.buttons {
+.CreateCards .buttons {
     grid-column: 1/3;
 }
