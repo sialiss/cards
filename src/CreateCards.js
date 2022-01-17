@@ -1,10 +1,17 @@
 import { useState } from 'react';
 import './CreateCards.css'
 
+
+
 let cardId = 1
 function CreateCards(props) {
 	const [cardTitle, setCardTitle] = useState("")
 	const [cardDescription, setCardDescription] = useState("")
+	
+	const clearInput = () => {
+	setCardTitle("")
+	setCardDescription("")
+}
 	
 	return (
 	  <div className="CreateCards">
@@ -16,12 +23,12 @@ function CreateCards(props) {
 					const card = { id: cardId, title: cardTitle, description: cardDescription }
 					props.addCard(card)
 					cardId += 1
+					clearInput()
 				}}>
 			✓
 		  </button>
 				<button className="delete" onClick={() => {
-					setCardTitle("")
-					setCardDescription("")
+					clearInput()
 				} }>
 			☓
 		  </button>
