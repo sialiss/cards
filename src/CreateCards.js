@@ -9,31 +9,30 @@ function CreateCards(props) {
 	const [cardDescription, setCardDescription] = useState("")
 	
 	const clearInput = () => {
-	setCardTitle("")
-	setCardDescription("")
-}
+		setCardTitle("")
+		setCardDescription("")
+	}
 	
-	return (
-	  <div className="CreateCards">
-		<input className='cardTitle' value={cardTitle} onChange={e => setCardTitle(e.target.value)}/>
-		<input className='cardDescription' value={cardDescription} onChange={e => setCardDescription(e.target.value)}/>
-		
-		<div className='buttons'>
-				<button className="confirm" onClick={() => {
-					const card = { id: cardId, title: cardTitle, description: cardDescription }
-					props.addCard(card)
-					cardId += 1
-					clearInput()
-				}}>
-			✓
-		  </button>
-				<button className="delete" onClick={() => {
-					clearInput()
-				} }>
-			☓
-		  </button>
-		</div>
-	  </div>
+	const handleSubmit = (event) => {
+		event.preventDefault()
+		const card = { id: cardId, title: cardTitle, description: cardDescription }
+		props.addCard(card)
+		cardId += 1
+		clearInput()
+	}
+	
+	return (		
+		<form className='CreateCards' onSubmit={ handleSubmit }>
+			
+			<input  className='cardTitle' value={cardTitle} onChange={e => setCardTitle(e.target.value)}/>
+			<input className='cardDescription' value={cardDescription} onChange={e => setCardDescription(e.target.value)}/>
+				
+			<div className='buttons'>
+				<input type="submit" className="confirm" value="✓"/>
+
+				<input type="button" className="delete" value="☓" onClick={ clearInput } />
+			</div>
+		</form>
 	);
 }
 
