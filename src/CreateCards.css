@@ -1,21 +1,22 @@
 .CreateCards {
-    display: grid;
     justify-items: center;
-    grid-template-rows: 3;
-    padding: 10px;
-    gap: 10px;
     background-color: rgb(218, 203, 203);
     box-shadow: 0px 0px 0px 1px rgb(146, 144, 144);
 }
 
-.CreateCards .cardTitle {
-    grid-row: 1/2;
+.wrapper {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 10px;
+    max-width: 70%;
+    gap: 10px;
 }
 
-.CreateCards .cardDescription {
-    grid-row: 2/3;
+.labels {
+    text-align: end;
 }
 
-.CreateCards .buttons {
-    grid-row: 3/4;
+.buttons {
+    grid-column: 1/3;
 }
