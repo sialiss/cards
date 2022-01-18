@@ -11,19 +11,28 @@ function CreateCards(props) {
 		setCardDescription("")
 	}
 	
-	const handleSubmit = (event) => {
-		event.preventDefault()
+	const handleSubmit = (e) => {
+		e.preventDefault()
 		const card = { id: cardId, title: cardTitle, description: cardDescription }
 		props.addCard(card)
 		cardId += 1
 		clearInput()
+	}
+
+	const handleTitleSubmit = (e) => {
+		// переключение на следующий инпут по нажатию на энтер вместо сабмита формы
+		if (e.code === "Enter") {
+			e.preventDefault()
+			// это плохо, лучше переделать, пока не знаю как
+			e.currentTarget.nextElementSibling.nextElementSibling.focus()
+		}	
 	}
 	
 	return (		
 		<form className='CreateCards' onSubmit={ handleSubmit }>
 			<div className='wrapper'>
 				<label className='labels'>Title: </label>
-				<input className='cardTitle' value={cardTitle} onChange={e => setCardTitle(e.target.value)} />
+				<input className='cardTitle' value={cardTitle} onChange={e => setCardTitle(e.target.value)} onKeyDown={e => handleTitleSubmit(e)}/>
 
 				<label className='labels'>Description: </label>
 				<input className='cardDescription' value={cardDescription} onChange={e => setCardDescription(e.target.value)} />
