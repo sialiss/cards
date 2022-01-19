@@ -24,9 +24,13 @@ function App() {
 
 	return (
 	  <div className="App main-wrapper">
-		<div className="sub-wrapper">
-		  <CreateCards addCard={getCard}></CreateCards>
-		  <ListOfCards cards={cards} deleteCard={deleteCard} editCard={editCard}></ListOfCards>
+			<div className="sub-wrapper">
+				
+				{/* форма создания карточки, обновляет состояние со всеми карточками */}
+				<CreateCards addCard={getCard}></CreateCards>
+				{/* список карточек, получается состояние со всеми карточками, функции удаления и редактирования карточек */}
+				<ListOfCards cards={cards} deleteCard={deleteCard} editCard={editCard}></ListOfCards>
+				
 		</div>
 	  </div>
 	);
