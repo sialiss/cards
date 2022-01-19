@@ -1,4 +1,17 @@
 .ListOfCards {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+}
+
+.ListOfCards .later {
+    grid-column: 1/2;
+}
+
+.ListOfCards .inProcess {
+    grid-column: 2/3;
+}
+
+.ListOfCards .completed {
+    grid-column: 3/4;
 }
