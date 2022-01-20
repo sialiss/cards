@@ -15,7 +15,6 @@ function Card({ data, deleteCard, editCard }) {
     return (
         <div className={["Card", data.list].join(' ')}>
             {/* Выводит айди, название и описание карточки, а также кнопки редактирования и удаления */}
-            <p className='text'>{ data.list }</p>
             <p className='text'>id: { data.id }</p>
             <p className='text'>{ data.title }</p>
             <p className='text'>{ data.description }</p>

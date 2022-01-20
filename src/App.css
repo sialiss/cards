@@ -1,15 +1,30 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 
 .main-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  
+	display: grid;
+	grid-column: 2/3;
+	gap: 20px;
 }
 
-.App .sub-wrapper {
-  display: grid;
-  grid-column: 2/3;
-  gap: 20px;
+.App .form-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+}
+
+.App .form {
+	grid-column: 2/3;
+}
+
+.App .lists-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 7fr 1fr;
+}
+
+.App .lists {
+	grid-column: 2/3;
+	display: flex;
+	justify-content: flex-start;
+	gap: 10px;
 }

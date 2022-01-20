@@ -1,17 +1,11 @@
 .ListOfCards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     gap: 10px;
 }
 
-.ListOfCards .later {
-    grid-column: 1/2;
-}
-
-.ListOfCards .inProcess {
-    grid-column: 2/3;
-}
-
-.ListOfCards .completed {
-    grid-column: 3/4;
+.ListOfCards .listTitle {
+    background-color: rgb(236, 226, 226);
+    box-shadow: 0px 0px 0px 1px rgb(146, 144, 144);
 }

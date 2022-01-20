@@ -51,7 +51,7 @@ function CreateCards(props) {
 				<label className='labels'>List: </label>
 				<select className='cardList' value={cardList} onChange={e => setCardList(e.target.value)}>
 					<option value={"later"}>Later</option>
-					<option value={"inProcess"}>In process</option>
+					<option value={"in process"}>In process</option>
 					<option value={"completed"}>Completed</option>
 				</select>
 
