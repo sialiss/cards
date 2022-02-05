@@ -2,9 +2,8 @@ import { useState } from 'react';
 import './App.css';
 import CreateCards from './CreateCards.js';
 import ListOfCards from './ListOfCards.js';
-
-// обновление в gh - npm run deploy
-
+import { DragDropContext } from 'react-beautiful-dnd';
+import { Droppable } from 'react-beautiful-dnd';
 
 function App() {
 	const [cards, setCards] = useState([])
@@ -47,9 +46,13 @@ function App() {
 			{/* список карточек, получается состояние со всеми карточками, функции удаления и редактирования карточек */}
 			<div className='lists-wrapper'>
 				<div className='lists'>
-					<ListOfCards title={ "later" } cards={lists.later} deleteCard={deleteCard} editCard={editCard}></ListOfCards>
-					<ListOfCards title={ "in process" } cards={lists.inProcess} deleteCard={deleteCard} editCard={editCard}></ListOfCards>
-					<ListOfCards title={ "completed" } cards={lists.completed} deleteCard={deleteCard} editCard={editCard}></ListOfCards>
+					<DragDropContext>
+						{/* <Droppable droppableId='droppable'> */}
+							<ListOfCards title={ "later" } cards={lists.later} deleteCard={deleteCard} editCard={editCard}></ListOfCards>
+							<ListOfCards title={ "in process" } cards={lists.inProcess} deleteCard={deleteCard} editCard={editCard}></ListOfCards>
+							<ListOfCards title={ "completed" } cards={lists.completed} deleteCard={deleteCard} editCard={editCard}></ListOfCards>
+						{/* </Droppable> */}
+					</DragDropContext>
 				</div>
 			</div>
 

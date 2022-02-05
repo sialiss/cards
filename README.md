@@ -1,4 +1,16 @@
-# Getting Started with Create React App
+<!-- 
+
+обновление в gh - npm run deploy 
+
+последнее, что осталось сделать - dnd 
+вопрос: как?
+ручками, react beautiful dnd, react dnd
+спросить охушку может ли она помочь
+посмотреть гайд по rb dnd
+
+-->
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +79,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
