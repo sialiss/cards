@@ -2,8 +2,8 @@ import { useState } from 'react';
 import './App.css';
 import CreateCards from './CreateCards.js';
 import ListOfCards from './ListOfCards.js';
-import { DragDropContext } from 'react-beautiful-dnd';
-import { Droppable } from 'react-beautiful-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend'
+import { DndProvider } from 'react-dnd'
 
 function App() {
 	const [cards, setCards] = useState([])
@@ -35,28 +35,26 @@ function App() {
 	}
 
 	return (
-		<div className="App main-wrapper">
-			
-			<div className="form-wrapper">
-				{/* форма создания карточки, обновляет состояние со всеми карточками */}
-				<div className='form'>
-					<CreateCards addCard={getCard}></CreateCards>
+		<DndProvider backend={HTML5Backend}>
+			<div className="App main-wrapper">
+				
+				<div className="form-wrapper">
+					{/* форма создания карточки, обновляет состояние со всеми карточками */}
+					<div className='form'>
+						<CreateCards addCard={getCard}></CreateCards>
+					</div>
 				</div>
-			</div>
-			{/* список карточек, получается состояние со всеми карточками, функции удаления и редактирования карточек */}
-			<div className='lists-wrapper'>
-				<div className='lists'>
-					<DragDropContext>
-						{/* <Droppable droppableId='droppable'> */}
-							<ListOfCards title={ "later" } cards={lists.later} deleteCard={deleteCard} editCard={editCard}></ListOfCards>
-							<ListOfCards title={ "in process" } cards={lists.inProcess} deleteCard={deleteCard} editCard={editCard}></ListOfCards>
-							<ListOfCards title={ "completed" } cards={lists.completed} deleteCard={deleteCard} editCard={editCard}></ListOfCards>
-						{/* </Droppable> */}
-					</DragDropContext>
-				</div>
-			</div>
+				{/* список карточек, получается состояние со всеми карточками, функции удаления и редактирования карточек */}
+				<div className='lists-wrapper'>
+					<div className='lists'>
 
-	  </div>
+								<ListOfCards title={ "later" } cards={lists.later} deleteCard={deleteCard} editCard={editCard}></ListOfCards>
+								<ListOfCards title={ "in process" } cards={lists.inProcess} deleteCard={deleteCard} editCard={editCard}></ListOfCards>
+								<ListOfCards title={ "completed" } cards={lists.completed} deleteCard={deleteCard} editCard={editCard}></ListOfCards>
+					</div>
+				</div>
+			</div>
+      	</DndProvider>
 	);
 }
 
