@@ -18,7 +18,6 @@ function CreateCards(props) {
 		// создаёт карточку, добавляет карточку в пропс, очищает инпуты
 		e.preventDefault()
 		const card = { id: cardId, title: cardTitle, description: cardDescription, list: cardList }
-		// console.log(card)
 		props.addCard(card)
 		cardId += 1
 		clearInput()
