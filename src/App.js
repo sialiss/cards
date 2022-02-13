@@ -6,9 +6,8 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DndProvider } from 'react-dnd'
 
 function App() {
-	const firstCard = { id: 0, title: "test card", description: "card description", list: "later" }
-	const [cards, setCards] = useState([firstCard])
-	const [listLater, setListLater] = useState([firstCard])
+	const [cards, setCards] = useState([])
+	const [listLater, setListLater] = useState([])
 	const [listInProcess, setListInProcess] = useState([])
 	const [listCompleted, setListCompleted] = useState([])
 	const lists = {later : listLater, inProcess : listInProcess,  completed : listCompleted }
