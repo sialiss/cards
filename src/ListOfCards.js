@@ -17,7 +17,8 @@ function ListOfCards({ title, cards, deleteCard, editCard, moveCard }) {
 		<div className="ListOfCards"
 			ref={drop}
 			role={'Dustbin'}
-			style={{ backgroundColor: isOver ? 'red' : 'white' }}
+			// почему-то не убирает цвет после перемещения карточки
+			// style={{ backgroundColor: isOver ? 'white' : 'none' }}
 		>
 			{canDrop ? 'Release to drop' : 'Drag a card here'}
 			
