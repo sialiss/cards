@@ -12,3 +12,12 @@
     grid-row: auto;
     margin: 5px;
 }
+
+.Card .wrapper {
+    justify-items: center;
+    display: grid;
+}
+
+.Card .hidden {
+    display: none;
+}

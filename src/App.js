@@ -39,6 +39,7 @@ function App() {
 	}
 	
 	function editCard(newCard) {
+
 		cards[cards.findIndex(card => card.id === newCard.id)] = newCard
 		setCards(cards)
 	}

@@ -1,5 +1,6 @@
 import './Card.css'
 import { useDrag } from 'react-dnd'
+import { useState } from 'react';
 
 function Card({ data, deleteCard, editCard }) {
     const [{ isDragging }, drag, dragPreview] = useDrag(() => ({
@@ -12,9 +13,14 @@ function Card({ data, deleteCard, editCard }) {
             isDragging: monitor.isDragging()
         })
     }))
+    // включено ли редактирование карты
+    const [isEditing, setIsEditing] = useState([])
 
-    function editData() {
+    function editData(data) {
+        document.forms["editable data"].children['editable text'].classList.toggle("hidden")
+        document.forms["editable data"].children['editing data'].classList.toggle("hidden")
 
+        // editCard()
     }
 
     function camelCase(text) {
@@ -32,19 +38,22 @@ function Card({ data, deleteCard, editCard }) {
 
             <div className={["Card", data.list].join(' ')}>
                 {/* Выводит айди, название и описание карточки, а также кнопки редактирования и удаления */}
-                <p className='text'>id: { data.id }</p>
-                <p className='text'>{ data.title }</p>
-                <p className='text'>{ data.description }</p>
+                <p className='text'>id: {data.id}</p>
+                <form name='editable data'>
+                    <div name='editable text'>
+                        <p className='text'>{ data.title }</p>
+                        <p className='text'>{ data.description }</p>
+                    </div>
+                    <div name='editing data' className={["wrapper", "hidden"].join(" ")}>
+                        <input className='cardTitle' value={data.title} />
+                        <input className='cardDescription' value={data.description}/>
+                    </div>
+                </form>
                 <div className='buttons'>
-                    <button className="change" onClick={() => {
-                        editData()
-                        editCard(data)
-                    }}>
+                    <button className="change" onClick={() => editData(data)}>
                     ✎
                     </button>
-                    <button className="delete" onClick={() => {
-                        deleteCard(data)
-                    }}>
+                    <button className="delete" onClick={() => deleteCard(data)}>
                     ☓
                     </button>
                 </div>
