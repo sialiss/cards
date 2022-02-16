@@ -27,6 +27,13 @@ function Card({ data, deleteCard, editCard }) {
         // преобразование текста в CamelCase
     }
 
+    // const handleSubmit = (e) => {
+	// 	// предотвращает обновление страницы (поведение по умолчанию)
+	// 	// создаёт карточку, добавляет карточку в пропс, очищает инпуты
+	// 	e.preventDefault()
+	// 	// сделать перевод фокуса на инпут названия карточки
+	// }
+
     camelCase(data.list)
 
     return (
@@ -45,8 +52,8 @@ function Card({ data, deleteCard, editCard }) {
                         <p className='text'>{ data.description }</p>
                     </div>
                     <div name='editing data' className={["wrapper", "hidden"].join(" ")}>
-                        <input className='cardTitle' value={data.title} />
-                        <input className='cardDescription' value={data.description}/>
+                        <input className='cardTitle' value={data.title} onChange={e => data.title = e.target.value} />
+                        <input className='cardDescription' value={data.description} onChange={e => data.description = e.target.value} />
                     </div>
                 </form>
                 <div className='buttons'>
