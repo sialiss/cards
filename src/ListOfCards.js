@@ -21,7 +21,7 @@ function ListOfCards({ title, cards, deleteCard, editCard, moveCard }) {
 			// style={{ backgroundColor: isOver ? 'white' : 'none' }}
 		>
 			{canDrop ? 'Release to drop' : 'Drag a card here'}
-			
+
 			{/* Выводит каждую карточку из стейта со всеми карточками по очереди */}
 			<div className='listTitle'>
 				<p>{title}</p>
