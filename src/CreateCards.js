@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import './CreateCards.css'
 
-let cardId = 1
+let cardId = 2
 function CreateCards(props) {
 	const [cardTitle, setCardTitle] = useState("")
 	const [cardDescription, setCardDescription] = useState("")
 	const [cardList, setCardList] = useState("later")
-	
+
 	const clearInput = () => {
 		// делает инпуты пустыми
 		setCardTitle("")
 		setCardDescription("")
 	}
-	
+
 	const handleSubmit = (e) => {
 		// предотвращает обновление страницы (поведение по умолчанию)
 		// создаёт карточку, добавляет карточку в пропс, очищает инпуты
@@ -31,10 +31,10 @@ function CreateCards(props) {
 			// это плохо, лучше переделать, пока не знаю как
 			// посмотреть как работает переключение по tab
 			e.currentTarget.nextElementSibling.nextElementSibling.focus()
-		}	
+		}
 	}
-	
-	return (		
+
+	return (
 		<form className='CreateCards' onSubmit={ handleSubmit }>
 			<div className='wrapper'>
 
@@ -57,7 +57,7 @@ function CreateCards(props) {
 				<div className='buttons'>
 					{/* кнопка сабмит по нажатию сабмитит форму (энтер в инпуте описания тоже) */}
 					<input type="submit" className="confirm" value="✓"/>
-					
+
 					{/* просто чистит инпуты */}
 					<input type="button" className="delete" value="☓" onClick={ clearInput } />
 				</div>

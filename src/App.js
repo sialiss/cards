@@ -7,16 +7,22 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DndProvider } from 'react-dnd'
 
 function App() {
+	const exampleCard = {
+		description: "description",
+		id: 1,
+		list: "later",
+		title: "do something"
+	}
 	const initialState = {
-		cards: [],
-		later: [],
+		cards: [exampleCard],
+		later: [exampleCard],
 		inProcess: [],
 		completed: []
 	};
 	const [state, dispatch] = useReducer(reducer, initialState)
 
 	function reducer(state, action) {
-		console.log(action.card)
+		// это надо переделать
 		switch (action.type) {
 			case 'add':
 				switch (action.card.list) {
@@ -57,7 +63,6 @@ function App() {
 	}
 
 	function getCard(card) {
-		console.log(card)
 		dispatch({type: 'add', card: card})
 		// setCards([card, ...cards])
 		// if (card.list === "later") {

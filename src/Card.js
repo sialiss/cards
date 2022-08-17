@@ -28,9 +28,9 @@ function Card({ data, deleteCard, editCard }) {
         document.forms["editable data"].children['editing data'].classList.toggle("hidden")
     }
 
-    function camelCase(text) {
-        // преобразование текста в CamelCase
-    }
+    // function camelCase(text) {
+    //     // преобразование текста в CamelCase
+    // }
 
     const handleSubmit = (e) => {
 		// предотвращает обновление страницы (поведение по умолчанию)
@@ -39,21 +39,21 @@ function Card({ data, deleteCard, editCard }) {
 		// сделать перевод фокуса на инпут названия карточки
 	}
 
-    camelCase(data.list)
+    // camelCase(data.list)
 
     return (
         /* This is optional. The dragPreview will be attached to the dragSource by default */
         <div className={["Card", data.list].join(' ')} ref={drag} style={{ opacity: isDragging ? 0.5 : 1}}>
             {/* The drag ref marks this node as being the "pick-up" node */}
             {/* <div role="Handle" ref={drag} /> */}
-            
+
 
             <div className={["Card", data.list].join(' ')}>
                 {/* Выводит айди, название и описание карточки, а также кнопки редактирования и удаления */}
-                <p className='text'>id: {data.id}</p>
+                {/* <p className='text'>id: {data.id}</p> */}
                 <form name='editable data' onSubmit={ handleSubmit }>
                     <div name='editable part'>
-                        <p className='text'>{ data.title }</p>
+                        <p className='text title'>{ data.title }</p>
                         <p className='text'>{data.description}</p>
                         <div className='buttons'>
                             <button className="change" onClick={() => editData(data)}>
@@ -70,7 +70,7 @@ function Card({ data, deleteCard, editCard }) {
                         <div className='buttons'>
                             {/* кнопка сабмит по нажатию сабмитит форму (энтер в инпуте описания тоже) */}
                             <input type="submit" className="confirm" value="✓"/>
-                            
+
                             {/* просто чистит инпуты */}
                             <input type="button" className="delete" value="☓" onClick={ closeEditing } />
 				        </div>
@@ -78,7 +78,7 @@ function Card({ data, deleteCard, editCard }) {
                 </form>
             </div>
         </div >
-        
+
     );
 }
 
