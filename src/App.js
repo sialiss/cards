@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useReducer } from 'react';
 import './App.css';
 import CreateCards from './CreateCards.js';
@@ -39,24 +38,42 @@ function App() {
 				switch (action.card.list) {
 					case 'later':
 						return {
-							...state, cards: state.cards.filter(someCard => someCard.id !== action.card.id),
-							later: state.later.filter(someCard => someCard.id !== action.card.id)
+							...state, cards: state.cards.filter(card => card.id !== action.card.id),
+							later: state.later.filter(card => card.id !== action.card.id)
 						};
 					case 'in process':
 						return {
-							...state, cards: state.cards.filter(someCard => someCard.id !== action.card.id),
-							inProcess: state.inProcess.filter(someCard => someCard.id !== action.card.id)
+							...state, cards: state.cards.filter(card => card.id !== action.card.id),
+							inProcess: state.inProcess.filter(card => card.id !== action.card.id)
 						};
 					case 'completed':
 						return {
-							...state, cards: state.cards.filter(someCard => someCard.id !== action.card.id),
-							completed: state.completed.filter(someCard => someCard.id !== action.card.id)
+							...state, cards: state.cards.filter(card => card.id !== action.card.id),
+							completed: state.completed.filter(card => card.id !== action.card.id)
 						};
 					default:
 						throw new Error();
 				}
 			case 'edit':
-				return {}
+				switch (action.card.list) {
+					case 'later':
+						return {
+							...state, cards: state.cards.sort(card => { if (card.id == action.card.id) card = action.card}),
+							later: state.later.sort(card => { if (card.id == action.card.id) card = action.card})
+						};
+					case 'in process':
+						return {
+							...state, cards: state.cards.sort(card => { if (card.id == action.card.id) card = action.card}),
+							inProcess: state.inProcess.sort(card => { if (card.id == action.card.id) card = action.card})
+						};
+					case 'completed':
+						return {
+							...state, cards: state.cards.sort(card => { if (card.id == action.card.id) card = action.card}),
+							completed: state.completed.sort(card => { if (card.id == action.card.id) card = action.card})
+						};
+					default:
+						throw new Error();
+				}
 			default:
       			throw new Error();
 		}

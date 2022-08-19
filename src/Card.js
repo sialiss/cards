@@ -14,11 +14,13 @@ function Card({ data, deleteCard, editCard }) {
         })
     }))
 
-    function editData(data) {
+    function toggleHiddenEditingForm() {
         document.forms["editable data"].children['editable part'].classList.toggle("hidden")
         document.forms["editable data"].children['editing data'].classList.toggle("hidden")
+    }
 
-        editCard(data)
+    function editData(data) {
+        toggleHiddenEditingForm()
     }
 
     function closeEditing() {
@@ -28,9 +30,9 @@ function Card({ data, deleteCard, editCard }) {
 
     const handleSubmit = (e) => {
 		// предотвращает обновление страницы (поведение по умолчанию)
-		// создаёт карточку, добавляет карточку в пропс, очищает инпуты
-		e.preventDefault()
-		// сделать перевод фокуса на инпут названия карточки
+        e.preventDefault()
+        editCard(data)
+        // toggleHiddenEditingForm()
 	}
 
     return (
@@ -58,7 +60,7 @@ function Card({ data, deleteCard, editCard }) {
                         <input type="submit" className="confirm" value="✓"/>
 
                         {/* просто чистит инпуты */}
-                        <input type="button" className="delete" value="☓" onClick={ closeEditing } />
+                        <input type="button" className="delete" value="☓" onClick={ toggleHiddenEditingForm } />
                     </div>
                 </div>
             </form>
