@@ -21,23 +21,26 @@
 .CreateCards .labels {
     font-size: 1.2em;
     text-align: end;
+    line-height: 1.6em;
 }
 
 .CreateCards input {
+    box-sizing: border-box;
     height: 1.5em;
     line-height: 1.5em;
     font-family: 'Sofia Sans', sans-serif;
-    font-size: 1em;
+    font-size: 1.3em;
     color: black;
     justify-items: center;
     background-image: linear-gradient(to bottom left, #59afff6a, #b22eff6a);
 }
 
 .CreateCards select {
+    box-sizing: border-box;
     height: 1.5em;
     line-height: 1.5em;
     font-family: 'Sofia Sans', sans-serif;
-    font-size: 1em;
+    font-size: 1.3em;
     color: black;
     justify-items: center;
     background-image: linear-gradient(to bottom left, #59afff6a, #b22eff6a);
