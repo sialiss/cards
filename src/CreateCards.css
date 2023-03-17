@@ -19,7 +19,28 @@
 }
 
 .CreateCards .labels {
+    font-size: 1.2em;
     text-align: end;
+}
+
+.CreateCards input {
+    height: 1.5em;
+    line-height: 1.5em;
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: 1em;
+    color: black;
+    justify-items: center;
+    background-image: linear-gradient(to bottom left, #59afff6a, #b22eff6a);
+}
+
+.CreateCards select {
+    height: 1.5em;
+    line-height: 1.5em;
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: 1em;
+    color: black;
+    justify-items: center;
+    background-image: linear-gradient(to bottom left, #59afff6a, #b22eff6a);
 }
 
 .CreateCards .buttons {

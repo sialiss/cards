@@ -5,7 +5,7 @@
 
     padding: 10px;
     gap: 10px;
-    
+
     /* border: 1px dotted black; */
     border: 10px solid;
     border-color: #59afff #59afff #b22eff #b22eff
@@ -24,6 +24,6 @@
         0px -2px black,
         2px 0px black,
         -2px 0px black,
-        -5px 5px #b22eff,
-        5px -5px #59afff;
+        -4px 4px #b22eff,
+        4px -4px #59afff;
 }
