@@ -1,27 +1,53 @@
 .Card {
     display: grid;
-    background-color: rgb(248, 236, 236);
-    box-shadow: 0px 0px 0px 1px rgb(146, 144, 144);
-    transition: background-color 0.4s linear;
-    }
+    font-family: 'Sofia Sans', sans-serif;
+    color: white;
+    background-image: linear-gradient(to bottom, #59afff44, #b22eff44);
+    border-top: 5px solid #59afff;
+    border-bottom: 5px solid #b22eff;
+    text-shadow: 0 0 4px black; 
+    transition: background-image 0.4s linear;
+    cursor: grab;
+}
 
 .Card:hover {
-    background-color: rgb(218, 203, 203);
-    color: black;
+    background-image: linear-gradient(to bottom, #59afff88, #b22eff88);
 }
 
 .Card .text {
     margin: 5px 0 10px 0;
+    font-size: 1.2em;
 }
 
 .Card .title {
     margin: 10px 0 0 0;
-    font-size: larger;
+    font-size: 1.4em;
 }
 
 .Card .buttons {
     grid-row: auto;
     margin: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.Card .buttons button {
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    font-size: 2em;
+    color: white;
+    background: #b22eff;
+    border: none;
+}
+
+.Card .buttons button:hover {
+    color: black;
+    background: #59afff;
 }
 
 .Card .wrapper {

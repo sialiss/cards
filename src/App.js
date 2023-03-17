@@ -132,9 +132,9 @@ function App() {
 				{/* список карточек, получается состояние со всеми карточками, функции удаления и редактирования карточек */}
 				<div className='lists-wrapper'>
 					<div className='lists'>
-								<ListOfCards title={ "later" } cards={state.later} deleteCard={deleteCard} editCard={editCard} moveCard={moveCard}></ListOfCards>
-								<ListOfCards title={ "in process" } cards={state.inProcess} deleteCard={deleteCard} editCard={editCard} moveCard={moveCard}></ListOfCards>
-								<ListOfCards title={ "completed" } cards={state.completed} deleteCard={deleteCard} editCard={editCard} moveCard={moveCard}></ListOfCards>
+						<ListOfCards title={ "later" } cards={state.later} deleteCard={deleteCard} editCard={editCard} moveCard={moveCard}></ListOfCards>
+						<ListOfCards title={ "in process" } cards={state.inProcess} deleteCard={deleteCard} editCard={editCard} moveCard={moveCard}></ListOfCards>
+						<ListOfCards title={ "completed" } cards={state.completed} deleteCard={deleteCard} editCard={editCard} moveCard={moveCard}></ListOfCards>
 					</div>
 				</div>
 			</div>

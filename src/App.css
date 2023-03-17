@@ -19,7 +19,7 @@
 
 .App .lists-wrapper {
 	display: grid;
-	grid-template-columns: 1fr 7fr 1fr;
+	grid-template-columns: 1fr minmax(auto, 1200px) 1fr;
 }
 
 .App .lists {
